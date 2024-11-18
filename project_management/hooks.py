@@ -5,6 +5,34 @@ app_description = "Project Management System"
 app_email = "arunanuwanthablan97@gmail.com"
 app_license = "mit"
 
+app_include_js = ["/assets/project_management/js/project_task_list.js"]
+
+# Workflow
+workflow = {
+    "Project Task": {
+        "workflow_name": "Project Task Workflow",
+        "states": [
+            {"state": "Not Started", "style": "Primary", "doc_status": 0},
+            {"state": "In Progress", "style": "Warning", "doc_status": 0},
+            {"state": "Completed", "style": "Success", "doc_status": 1},
+        ],
+        "transitions": [
+            {
+                "state": "Not Started",
+                "action": "Start Task",
+                "next_state": "In Progress",
+                "allowed": "Task Owner",
+            },
+            {
+                "state": "In Progress",
+                "action": "Complete Task",
+                "next_state": "Completed",
+                "allowed": "Task Owner",
+            },
+        ],
+    }
+}
+
 # Apps
 # ------------------
 
@@ -241,4 +269,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

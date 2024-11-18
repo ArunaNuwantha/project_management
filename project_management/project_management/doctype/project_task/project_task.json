@@ -1,0 +1,44 @@
+{
+    "name": "Project Task",
+    "doctype": "DocType",
+    "module": "Project Management",
+    "custom": 1,
+    "autoname": "field:task_name",
+    "fields": [
+        {
+            "fieldname": "task_name",
+            "label": "Task Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "project",
+            "label": "Project",
+            "fieldtype": "Link",
+            "options": "Project"
+        },
+        {
+            "fieldname": "start_date",
+            "label": "Start Date",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "end_date",
+            "label": "End Date",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "assigned_to",
+            "label": "Assigned To",
+            "fieldtype": "Link",
+            "options": "User"
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "Not Started\nIn Progress\nCompleted",
+            "default": "Not Started"
+        }
+    ]
+}
